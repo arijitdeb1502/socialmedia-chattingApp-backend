@@ -12,7 +12,11 @@ const signup = async ({ name, email , password , age }) => {
     password = await bcrypt.hash(password, 8);
     const newUser = new User({ name, email , password , age });
     let result = await newUser.save();
+    // console.log(`useService result after save is ${result}`);
+    // console.log(`useService result after formatMongoData is ${formatMongoData(result)}`);
     return formatMongoData(result);
+    
+
   } catch (error) {
     console.log('Something went wrong: userService: signup', error);
     throw new Error(error);
