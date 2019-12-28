@@ -2,6 +2,7 @@ const constants = require('../constants');
 const userService = require('../service/userService');
 
 const signup = async (req, res) => {
+
   let response = { ...constants.defaultServerResponse };
   try {
     const responseFromService = await userService.signup(req.body);

@@ -16,6 +16,7 @@ const validateObjectSchema = (data, schema) => {
 }
 
 const validateBody = (schema) => {
+
   return (req, res, next) => {
     let response = { ...constants.defaultServerResponse };
     const error = validateObjectSchema(req.body, schema);
@@ -24,6 +25,7 @@ const validateBody = (schema) => {
       response.message = constants.requestValidationMessage.BAD_REQUEST;
       return res.status(response.status).send(response);
     }
+
     return next();
   }
 }
