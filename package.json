@@ -9,7 +9,13 @@
     "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "reporters": [
+      "default",
+      ["./node_modules/jest-html-reporter", {
+          "pageTitle": "Test Report"
+      }]
+    ]
   },
   "author": "Arijit Deb",
   "license": "ISC",
@@ -23,6 +29,7 @@
   "devDependencies": {
     "env-cmd": "^10.0.1",
     "jest": "^24.9.0",
+    "jest-html-reporter": "^2.8.0",
     "nodemon": "^2.0.2",
     "supertest": "^4.0.2"
   }
