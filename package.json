@@ -5,15 +5,16 @@
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "env-cmd ./config/dev.env nodemon src/server.js",
-    "test": "env-cmd ./config/test.env jest --watch --runInBand"
+    "dev": "env-cmd  -f ./config/dev.env nodemon src/server.js",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
   },
   "author": "Arijit Deb",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.8.3"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",

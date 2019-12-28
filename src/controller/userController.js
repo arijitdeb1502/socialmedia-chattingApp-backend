@@ -14,3 +14,7 @@ const signup = async (req, res) => {
   }
   return res.status(response.status).send(response);
 }
+
+module.exports = {
+    signup: signup
+}

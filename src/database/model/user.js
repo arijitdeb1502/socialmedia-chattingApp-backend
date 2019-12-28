@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const User = mongoose.model('User',{
+const userSchema=new mongoose.Schema({
     name :{
         type: String,
         required: true,
@@ -22,6 +22,19 @@ const User = mongoose.model('User',{
         type: Number,
         default: 0
     }
-})
+}, {
+    timestamps: true,
+    toObject: {
+      transform: function (doc, ret, options) {
+        ret.id = ret._id;
+        delete ret._id;
+        delete ret.password;
+        delete ret.__v;
+        return ret;
+      }
+    }
+  });
+
+const User = mongoose.model('User',userSchema);
 
 module.exports = User;

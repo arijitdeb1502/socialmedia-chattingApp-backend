@@ -6,3 +6,5 @@ router.post('/signup',
 //   joiSchemaValidation.validateBody(userSchema.signup),
   userController.signup
 );
+
+module.exports = router;
