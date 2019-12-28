@@ -9,11 +9,11 @@ const signup = async ({ name, email , password , age }) => {
     if (user) {
       throw new Error(constants.userMessage.DUPLICATE_EMAIL);
     }
+    
     password = await bcrypt.hash(password, 8);
     const newUser = new User({ name, email , password , age });
     let result = await newUser.save();
-    // console.log(`useService result after save is ${result}`);
-    // console.log(`useService result after formatMongoData is ${formatMongoData(result)}`);
+
     return formatMongoData(result);
     
 

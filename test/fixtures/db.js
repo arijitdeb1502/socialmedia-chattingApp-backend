@@ -8,6 +8,12 @@ const userOne = {
     age: 31
 };
 
+const userTwo = {
+    name: 'Arijit Deb',
+    email: 'auri1251@gmail.com',
+    password: 'aRijan1@3',
+    age: 36
+};
 
 const setupDatabase = async () => {
     await User.deleteMany();
@@ -15,5 +21,6 @@ const setupDatabase = async () => {
 
 module.exports = {
     userOne,
+    userTwo,
     setupDatabase
 }
