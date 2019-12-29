@@ -12,9 +12,12 @@
     "testEnvironment": "node",
     "reporters": [
       "default",
-      ["./node_modules/jest-html-reporter", {
+      [
+        "./node_modules/jest-html-reporter",
+        {
           "pageTitle": "Test Report"
-      }]
+        }
+      ]
     ]
   },
   "author": "Arijit Deb",
@@ -31,6 +34,8 @@
     "jest": "^24.9.0",
     "jest-html-reporter": "^2.8.0",
     "nodemon": "^2.0.2",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "swagger-ui-express": "^4.0.7",
+    "yamljs": "^0.3.0"
   }
 }

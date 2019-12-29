@@ -1,0 +1,64 @@
+swagger: '2.0'
+info:
+  description: Node.js Rest API doc
+  version: '1.0.0'
+  title: Node Rest API documentation
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: arijitdeb.work@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:3001
+basePath: /api/v1
+schemes:
+- http
+paths:
+  /user/signup:
+    post:
+      tags:
+        - UserController
+      summary: Sign Up
+      description: API for Registering a User
+      parameters:
+        - in: body
+          name: body
+          description: Signup Payload
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Login Successfully
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+definitions:
+  User:
+    properties:
+      name:
+        type: string
+        description: Full Name of user
+      email:
+        type: string
+        description: email of the user
+      password:
+        type: string
+        description: Should be at least 7 digits
+      age:
+        type: number
+        description: Age of the user
+  ApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
